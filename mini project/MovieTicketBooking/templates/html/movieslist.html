@@ -1,0 +1,75 @@
+{% extends 'html/base.html' %}
+{% block title %} Movie List {% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="card col-md-3 shadow-lg">
+      <div class="card-body">
+        <h4 class="text-center">Add Movie</h4>
+        <form method="post">
+          {% csrf_token %}
+          {% for i in w %}
+            {{i}}
+          {% endfor %}
+          <div class="row">
+            <div class="col">
+              <input type="reset" value="Clear" name="" class="form-control btn btn-danger">
+            </div>
+            <div class="col">
+              <input type="submit" value="Upload" name="" class="form-control btn btn-success">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="card col-md shadow-lg">
+      <div class="card-body">
+        <h4>List of Movies</h4>
+        <table class="table">
+            <tr>
+              <th class="text-center">Movie Title</th>
+              <th class="text-center">Certification</th>
+              <th class="text-center">Language</th>
+              <th class="text-center">Show Time</th>
+              <th class="text-center">Price</th>
+              <th class="text-center">Ticket Availability</th>
+              <th class="text-center">Actions</th>
+            </tr>
+            {% for j in s %}
+            <tr>
+              <td class="text-center">{{j.movie}}</td>
+              <td class="text-center">{{j.moviename}}</td>
+              <td class="text-center">{{j.language}}</td>
+              <td class="text-center">{{j.showtime}}</td>
+              <td class="text-center">{{j.price}}</td>
+              <td class="text-center">
+                  {% if j.is_avail == 1 %}
+                  <p class="badge badge-success">Available</p>
+                  {% else %}
+                   <p class="badge badge-danger">Not Available</p>
+                   {% endif %}
+            </td>
+              <td>
+                <div class="row">
+                  <div class="col">
+                    <a href="{% url 'movie_update_url' j.id %}" class="btn btn-warning form-control">Update</a>
+                  </div>
+                  <div class="col">
+                    <a href="{% url 'movie_delete_url' j.id %}" class="btn btn-danger form-control">Delete</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            {% endfor %}
+        </table>
+      </div>
+    </div>
+  </div>
+  
+</div>
+  
+{% endblock %}
+
+
+

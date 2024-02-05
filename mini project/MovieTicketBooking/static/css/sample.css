@@ -1,0 +1,56 @@
+.signup-button {
+    background-color: aliceblue;
+    border-radius: 100px;
+    box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+    color: light;
+    display: inline-block;
+    cursor: pointer;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .signup-button :hover {
+    box-shadow: 0 0.5em 1.5em -0.5em #14a73e98
+    transform:scale(1.05) rotate(-1deg);
+    text: light;
+  }
+  .signup-button:active {
+    box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+  }
+   /* CSS */
+  .button {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 7px 20px;
+    color: white;
+    background: #ad5389;
+    background: linear-gradient(0deg, rgba(20,167,62,1) 0%, rgba(102,247,113,1) 100%);
+    border: none;
+    box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+    letter-spacing: 0.05em;
+    border-radius: 100px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button:hover {
+    box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+    transform: scale(1.05) rotate(-1deg);
+  }
+  
+  .button:active {
+    box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+  }

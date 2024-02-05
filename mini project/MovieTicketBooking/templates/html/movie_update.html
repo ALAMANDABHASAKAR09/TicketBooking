@@ -1,0 +1,30 @@
+
+{% extends 'html/base.html' %}
+{% block title %} Movie List {% endblock %}
+{% block content %}
+
+   <div class="container">
+  <div class="card col-md-6 mx-auto">
+    <h3 class="bg-info text-light text-center border rounded p-2 my-3">Update Movie</h3>
+    <div class="card-body">
+       <form method="post">
+          {% csrf_token %}
+          <input type="text" name="r" placeholder="Movie Title" value={{s.movie}} class="form-control my-2">
+          <input type="text" name="n" placeholder="Certification" value={{s.moviename}} class="form-control my-2">
+          <input type="text" name="y" placeholder="Language" value={{s.language}} class="form-control my-2">
+          <input type="text" name="b" placeholder="Show Time" value={{s.showtime}} class="form-control my-2">
+          <input type="number" name="a" placeholder="Price" value={{s.price}} class="form-control my-2">
+          <div class="row my-3">
+            <div class="col">
+              <a href="{% url 'movie_list_url' %}" class="btn btn-secondary form-control"> Back</a>
+              
+            </div>
+            <div class="col">
+              <input type="submit" value="Update Student" name="" class="form-control btn btn-outline-success">
+            </div>
+          </div>
+        </form>
+    </div>
+  </div>
+  </div>
+  {% endblock %}
